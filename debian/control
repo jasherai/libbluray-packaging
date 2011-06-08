@@ -7,6 +7,9 @@ Uploaders: Andres Mejia <mcitadel@gmail.com>,
  Rico Tzschichholz <ricotz@ubuntu.com>
 DM-Upload-Allowed: yes
 Build-Depends: debhelper (>= 7.0.50~),
+               autoconf,
+	       automake,
+	       libtool,
                javahelper,
                default-jdk,
                ant
