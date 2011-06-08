@@ -1,0 +1,19 @@
+#!/usr/bin/make -f
+
+export JAVA_HOME=/usr/lib/jvm/default-java
+
+# Set CFLAGS to DEB_CFLAGS
+CFLAGS=$(DEB_CFLAGS)
+
+%:
+	dh --with javahelper $@
+
+override_dh_auto_configure:
+	dh_auto_configure -- --disable-examples --enable-bdjava
+
+override_dh_clean:
+	dh_clean
+	rm -rf src/libbluray/bdj/build
+
+get-orig-source:
+	$(dir $_)libbluray-get-orig-source
