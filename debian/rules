@@ -9,6 +9,7 @@ CFLAGS=$(DEB_CFLAGS)
 	dh --with javahelper $@
 
 override_dh_auto_configure:
+	./bootstrap
 	dh_auto_configure -- --disable-examples --enable-bdjava
 
 override_dh_clean:
